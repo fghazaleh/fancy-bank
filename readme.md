@@ -14,6 +14,12 @@ makes the algorithms interchangeable within that family.
 ```php
 class SilverOverdraft implements OverdraftInterface {...}
 ```
+* Null Object design pattern:
+> The intent of a Null Object is to encapsulate the absence of an object by providing a substitutable alternative that offers suitable default do nothing behavior. In short, a design where "nothing will come of nothing", **NoOverdraft** class is the real example of using null object design pattern. 
+
+```php
+class NoOverdraft implements OverdraftInterface {...}
+```
 
 
 > To run the program, please read the follow:
