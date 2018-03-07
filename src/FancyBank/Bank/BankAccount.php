@@ -123,6 +123,15 @@ class BankAccount implements BackAccountInterface
     }
 
     /**
+     * Used only to show how Tell, Don't ask law works if there is a long chain.
+     * PS: This this example, I don't recommend
+     * */
+    //public function isGrantOverdraftFunds(float $newAmount):bool
+    //{
+    //    return $this->overdraft->isGrantOverdraftFunds($newAmount);
+    //}
+
+    /**
      * @param float $newBalance ;
      * @return void;
      * */

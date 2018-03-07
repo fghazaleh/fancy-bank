@@ -15,7 +15,7 @@ interface OverdraftInterface
      * @param double $newAmount;
      * @return boolean;
      * */
-    public function isGrantOverdraftFunds($newAmount):bool;
+    public function isGrantOverdraftFunds(float $newAmount):bool;
 
     /**
      * @return double

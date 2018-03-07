@@ -19,7 +19,7 @@ class SilverOverdraft implements OverdraftInterface
      * @param double $newAmount ;
      * @return boolean;
      * */
-    public function isGrantOverdraftFunds($newAmount):bool
+    public function isGrantOverdraftFunds(float $newAmount):bool
     {
         return ($this->getOverdraftFundsAmount() + $newAmount) >= 0;
     }

@@ -23,7 +23,7 @@ class WithdrawTransaction extends BaseTransaction implements BankTransactionInte
     public function applyTransaction(BackAccountInterface $bankAccount):float
     {
         $newBalance = $bankAccount->balance() - $this->amount;
-        if ($newBalance < 0 && !$bankAccount->getOverdraft()->isGrantOverdraftFunds($newBalance)) {
+        if ($this->isGrantOverdraftFunds($bankAccount, $newBalance)) {
             throw new InvalidOverdraftFundsException('Your withdraw has reach the max overdraft funds.');
         }
 
@@ -44,5 +44,18 @@ class WithdrawTransaction extends BaseTransaction implements BankTransactionInte
     public function getAmount():float
     {
         return $this->amount;
+    }
+
+    private function isGrantOverdraftFunds(BackAccountInterface $bankAccount, float $newBalance):bool
+    {
+        return ($newBalance < 0 && !$bankAccount
+                ->getOverdraft()
+                ->isGrantOverdraftFunds($newBalance));
+
+        // Apply low of Demeter, Tell, Don't ask Law.
+        // To stop the long chain, define a method in BankAccount class
+
+        //return ($newBalance < 0 && !$bankAccount
+        //        ->isGrantOverdraftFunds($newBalance));
     }
 }
