@@ -26,11 +26,14 @@ class NoOverdraft implements OverdraftInterface {...}
 * Tell, Don't Ask
 > You should endeavor to tell objects what you want them to do; do not ask them questions about their state, make a decision, and then tell them what to do. The idea is to avoid coupling the internal structure of an object to clients.
 In this example shows the chaining to ask something.
+
 ```php
 return ($newBalance < 0 && !$bankAccount
                 ->getOverdraft()
                 ->isGrantOverdraftFunds($newBalance));
 ```
+
+For more details about LoD, please [click here](https://github.com/fghazaleh/fancy-bank/wiki/Law-of-Demeter-(LoD)) 
 
 ---
 
