@@ -22,8 +22,8 @@ class NoOverdraft implements OverdraftInterface {...}
 ```
 ---
 
-### SOLID Principles :
-* Single-responsibility Principle
+### SOLID Principles:
+* Single-responsibility Principle:
 > A class should have one and only one reason to change, meaning that a class should have only one job.
 
 > The **BankAccount** class has only one job which it holds the state of the bank account (balance, account status ..etc), for the logic of transaction and overdarft funds will be in other classes. 
@@ -36,7 +36,7 @@ class BankAccount implements BackAccountInterface {
 }
 ```
 
-* Open-closed Principle
+* Open-closed Principle:
 > Objects or entities should be open for extension, but closed for modification.
 
 ```php
@@ -56,13 +56,13 @@ $bankaccount->transaction(new DepositTransaction(200));
 $bankaccount->transaction(new WithdrawTransaction(150));
 ```
 
-* Liskov substitution principle
+* Liskov substitution principle:
 > Child classes should never break the parent class' type definitions. More details [click here](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#toc-liskov-substitution-principle)
 
-* Interface segregation principle
+* Interface segregation principle:
 > A client should never be forced to implement an interface that it doesn't use or clients shouldn't be forced to depend on methods they do not use. More details [click here](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#toc-interface-segregation-principle)
 
-* Dependency Inversion principle
+* Dependency Inversion principle:
 > Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
 
 ```php
